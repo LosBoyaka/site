@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block title %}Головна — Mercedes-Benz Автосалон{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <h1>Ласкаво просимо до автосалону Mercedes-Benz</h1>
+    <p>Кращі автомобілі класу люкс чекають на вас!</p>
+    <img src="{{ url_for('static', filename='img.png') }}" alt="Mercedes-Benz">
+</section>
+{% endblock %}

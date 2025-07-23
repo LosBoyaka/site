@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}{{ model.name }} — Деталі{% endblock %}
+
+{% block content %}
+<h2>{{ model.name }}</h2>
+<img src="{{ url_for('static', filename=model.image) }}" alt="{{ model.name }}" style="max-width: 600px; width: 100%;" />
+
+<p style="margin-top: 15px;">{{ model.details }}</p>
+
+<table style="margin-top: 25px; font-size: 16px; text-align: left;">
+    <tr><th>Рік випуску:</th><td>{{ model.year }}</td></tr>
+    <tr><th>Двигун:</th><td>{{ model.engine }}</td></tr>
+    <tr><th>Потужність:</th><td>{{ model.power }}</td></tr>
+    <tr><th>Розгін (0–100 км/год):</th><td>{{ model.acceleration }}</td></tr>
+    <tr><th>Коробка передач:</th><td>{{ model.transmission }}</td></tr>
+    <tr><th>Привід:</th><td>{{ model.drive }}</td></tr>
+    <tr><th>Ціна:</th><td>{{ model.price }}</td></tr>
+</table>
+
+<div style="margin-top: 30px;">
+    <a href="{{ url_for('order_form', model_id=model.id) }}" class="btn btn-success">Замовити</a>
+    <a href="{{ url_for('models') }}" class="btn">← Назад до моделей</a>
+</div>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}Про нас — Mercedes-Benz Автосалон{% endblock %}
+
+{% block content %}
+<h2 class="mb-4 text-center">Ласкаво просимо до світу Mercedes-Benz</h2>
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+
+  <div class="col">
+    <div class="card h-100 shadow">
+      <img src="{{ url_for('static', filename='showroom.png') }}" class="card-img-top" alt="Автосалон Mercedes-Benz">
+      <div class="card-body">
+        <h5 class="card-title">Сучасний автосалон</h5>
+        <p class="card-text">Комфортний шоурум із великим вибором нових моделей та затишною зоною очікування.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="card h-100 shadow">
+      <img src="{{ url_for('static', filename='service.jpg') }}" class="card-img-top" alt="Сервіс Mercedes-Benz">
+      <div class="card-body">
+        <h5 class="card-title">Преміальний сервіс</h5>
+        <p class="card-text">Наші сертифіковані майстри гарантують якість, швидкість та оригінальні запчастини.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="card h-100 shadow">
+      <img src="{{ url_for('static', filename='consult.png') }}" class="card-img-top" alt="Консультації">
+      <div class="card-body">
+        <h5 class="card-title">Індивідуальні консультації</h5>
+        <p class="card-text">Наші фахівці підберуть для вас ідеальне авто відповідно до ваших побажань і бюджету.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="mt-5 text-center">
+  <p class="lead">Ми створюємо не просто авто — ми створюємо досвід, який надихає.</p>
+</div>
+{% endblock %}

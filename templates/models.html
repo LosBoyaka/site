@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}Моделі Mercedes-Benz{% endblock %}
+
+{% block content %}
+<h1>Моделі Mercedes-Benz</h1>
+
+<div class="models-grid">
+    {% for car in cars %}
+    <div class="model-card">
+        {% if car.image %}
+        <img src="{{ url_for('static', filename=car.image) }}" alt="{{ car.name }}">
+        {% endif %}
+        <h3>{{ car.name }}</h3>
+        <p>{{ car.details }}</p>
+        <div class="buttons">
+            <a href="{{ url_for('order_form', model_id=car.id) }}" class="btn btn-success">Замовити</a>
+            <a href="{{ url_for('model_details', model_id=car.id) }}" class="btn">Детальніше</a>
+        </div>
+    </div>
+    {% else %}
+    <p style="color:#ccc; font-size:18px;">Немає доступних моделей.</p>
+    {% endfor %}
+</div>
+{% endblock %}

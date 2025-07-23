@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8" />
+    <title>Дякуємо за замовлення - {{ model.name }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Дякуємо, {{ name }}!</h1>
+        <p>Ваше замовлення на автомобіль <strong>{{ model.name }}</strong> прийнято.</p>
+
+        <a href="/models" class="btn btn-order">Повернутись до каталогу</a>
+    </div>
+</body>
+</html>

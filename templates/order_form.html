@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8" />
+    <title>Замовлення - {{ model.name }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container order-form-container">
+        <h1>Замовлення автомобіля: {{ model.name }}</h1>
+
+
+        {% if error %}
+            <p class="error-message">{{ error }}</p>
+        {% endif %}
+
+        <form method="post" novalidate>
+            <label for="customer_name">Ваше ім'я:</label>
+            <input
+                type="text"
+                id="customer_name"
+                name="customer_name"
+                placeholder="Введіть ваше ім'я"
+                required
+                autocomplete="off"
+                value="{{ request.form.customer_name | default('') }}"
+            >
+
+            <label for="email">Електронна пошта:</label>
+            <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="example@mail.com"
+                required
+                autocomplete="off"
+                value="{{ request.form.email | default('') }}"
+            >
+
+            <label for="phone">Номер телефону:</label>
+            <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="+380XXXXXXXXX"
+                required
+                autocomplete="off"
+                value="{{ request.form.phone | default('') }}"
+            >
+
+            <label for="city">Місто:</label>
+            <input
+                type="text"
+                id="city"
+                name="city"
+                placeholder="Ваше місто"
+                required
+                autocomplete="off"
+                value="{{ request.form.city | default('') }}"
+            >
+
+            <label for="color">Бажаний колір автомобіля:</label>
+            <input
+                type="text"
+                id="color"
+                name="color"
+                placeholder="Наприклад, чорний, білий"
+                autocomplete="off"
+                value="{{ request.form.color | default('') }}"
+            >
+
+            <button type="submit" class="btn btn-order">Оформити замовлення</button>
+        </form>
+
+        <a href="/models" class="back-link">Назад до каталогу</a>
+    </div>
+</body>
+</html>
